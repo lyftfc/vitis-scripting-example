@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root versionMajor="1" versionMinor="6">
+  <kernel name="krnl_dual_fifo" language="ip_c" vlnv="nus.edu.sg:kernel:krnl_dual_fifo:1.0" attributes="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" interrupt="false" hwControlProtocol="ap_ctrl_none">
+    <ports>
+      <port name="s_axi_control" mode="slave" range="0x1000" dataWidth="32" portType="addressable" base="0x0"/>
+      <port name="s_dina" mode="read_only" dataWidth="16" portType="stream"/>
+      <port name="s_dinb" mode="read_only" dataWidth="16" portType="stream"/>
+      <port name="m_douta" mode="write_only" dataWidth="16" portType="stream"/>
+      <port name="m_doutb" mode="write_only" dataWidth="16" portType="stream"/>
+    </ports>
+    <args>
+      <arg name="s_dina" addressQualifier="4" id="0" port="s_dina" size="0x4" offset="0x010" hostOffset="0x0" hostSize="0x4" type="stream&lt;qdma_axis&lt;16,0,0,0>>&amp;" />
+      <arg name="s_dinb" addressQualifier="4" id="1" port="s_dinb" size="0x4" offset="0x018" hostOffset="0x0" hostSize="0x4" type="stream&lt;qdma_axis&lt;16,0,0,0>>&amp;" />
+      <arg name="m_douta" addressQualifier="4" id="2" port="m_douta" size="0x4" offset="0x020" hostOffset="0x0" hostSize="0x4" type="stream&lt;qdma_axis&lt;16,0,0,0>>&amp;" />
+      <arg name="m_doutb" addressQualifier="4" id="3" port="m_doutb" size="0x4" offset="0x028" hostOffset="0x0" hostSize="0x4" type="stream&lt;qdma_axis&lt;16,0,0,0>>&amp;" />
+    </args>
+  </kernel>
+</root>
+

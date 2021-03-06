@@ -1,0 +1,12 @@
+{
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        "**/.hg/store/**": true,
+        "**/.Xil/**": true,
+        "**/.ipcache/**": true,
+        "**/vpp_temp/**": true,
+        "**/*_packprj/**": true
+    }
+}

@@ -1,0 +1,13 @@
+.Xil/
+.ipcache/
+.hbs/
+/hw_build/
+/vpp_temp/
+*.log
+*.jou
+*.str
+*.o
+*.a
+*_packprj/
+
+/et_host
