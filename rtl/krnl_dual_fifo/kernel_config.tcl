@@ -4,8 +4,6 @@
 
 set krnl_name "krnl_dual_fifo"
 set krnl_vendor "nus.edu.sg"
-set hw_part "xcu250-figd2104-2L-e"
-set hw_board "xilinx.com:au250:part0:1.3"
 # Kernel ap_clk frequency in Hz
 set krnl_freq 250000000
 # Kernel extra AXIS intefaces

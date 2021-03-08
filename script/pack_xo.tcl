@@ -52,6 +52,14 @@ proc package_project {path_to_packaged kernel_vendor kernel_library kernel_name 
 # Vivado Commands #
 ###################
 
+if { $::argc < 2 } {
+	puts "Insufficient arguments supplied."
+    puts "Usage: vivado ... -tclargs <part_id> <board_id>"
+	exit 2
+} else {
+    set hw_part [lindex $::argv 0]
+	set hw_board [lindex $::argv 1]
+}
 set prj_name "${krnl_name}_packprj"
 create_project -force -part $hw_part -rtl_kernel $prj_name "./${prj_name}"
 

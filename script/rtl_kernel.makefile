@@ -4,7 +4,8 @@ kernel: $(VPRJ_NAME)/$(KRNL_NAME).xo
 
 $(VPRJ_NAME)/$(KRNL_NAME).xo:
 	vivado -nolog -nojournal -mode batch \
-		-source kernel_config.tcl -source ../../script/pack_xo.tcl
+		-source kernel_config.tcl -source ../../script/pack_xo.tcl \
+		-tclargs $(HW_PART) $(HW_BOARD)
 
 clean:
 	@rm -rf $(VPRJ_NAME)/ .hbs/ .Xil/ *.log *.jou

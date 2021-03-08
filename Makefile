@@ -1,7 +1,8 @@
-VPP := v++
 TGT := hw
 NJOBS := 12
 PLATFORM := xilinx_u250_xdma_201830_2
+PF_PART := xcu250-figd2104-2L-e
+PF_BOARD := xilinx.com:au250:part0:1.3
 OBJ_DIR := hw_build
 TEMP_DIR := vpp_temp
 
@@ -14,6 +15,7 @@ EXEC_NAME := et_host
 HOST_SRC := $(EXEC_NAME).cpp xcl2.cpp
 HOST_INC := xcl2.hpp
 
+VPP := v++
 XRT_DIR := /opt/xilinx/xrt
 VITIS_DIR := /opt/Xilinx/Vitis/2020.1
 
@@ -52,7 +54,7 @@ $(OBJ_DIR)/hls/%.xo: src/%.cpp
 $(OBJ_DIR)/rtl/%.xo: rtl/%/kernel.xml rtl/%/kernel_config.tcl
 	$(eval KRNL_NAME := $(patsubst $(OBJ_DIR)/rtl/%.xo,%,$@))
 	@make -C ./rtl/$(KRNL_NAME)/ -f ../../script/rtl_kernel.makefile \
-		-j $(NJOBS) KRNL_NAME=$(KRNL_NAME)
+		-j $(NJOBS) KRNL_NAME=$(KRNL_NAME) HW_PART=$(PF_PART) HW_BOARD=$(PF_BOARD)
 	@mkdir -p $(OBJ_DIR)/rtl
 	@cp ./rtl/$(KRNL_NAME)/$(KRNL_NAME)_packprj/$(KRNL_NAME).xo $(OBJ_DIR)/rtl/
 
